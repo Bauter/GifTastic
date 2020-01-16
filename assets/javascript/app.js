@@ -35,9 +35,9 @@ $(document).ready(() => {
 
     // Use "GET" method to access Giphy API.
     $(".gif-button").on("click", function() {
-
-        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
         car = $(this).attr("data-name");
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
+        
 
         $.ajax({
         url: queryURL,
