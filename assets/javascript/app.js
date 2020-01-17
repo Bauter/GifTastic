@@ -53,39 +53,38 @@ $(document).ready(() => {
                 let paragraph = $("<p>");
                 paragraph.text("rating: " + rating);
                 let gifImg = $("<img>");
-                gifImg.attr("src", results[j].images.fixed_height.url);
-                gifImg.attr("data-state", "animate");
+                gifImg.attr({
+                    "data-animate": results[j].images.fixed_height.url,
+                    "data-still": results[j].images.fixed_height_still.url,
+                    "data-state": "still",
+                    src: results[j].images.fixed_height_still.url
+                });
                 gifImg.addClass("giphy");
                 imgDiv.prepend(paragraph);
                 imgDiv.prepend(gifImg);
                 $("#giphy-div").prepend(imgDiv);
+                
             };
 
             $("img.giphy").on("click", function() {
                 console.log("clicked a giphy");
-                console.log($(this).attr("data-state"))
+                console.log($(this).attr("src"));
                 let state= $(this).attr("data-state");
+                console.log(state);
                 
-                if (state == "animate") {
-                    $(this).attr("src",  results.images.fixed_height_still.url);
-                    $(this).attr("data-state", "still");
-                } else {
-                    $(this).attr("src", results.images.fixed_height.url);
-                    $(this).attr("data-state", "animate");
-                }
-        
+               if (state == "still") {
+                   $(this).attr("src", $(this).attr("data-animate"));
+                   $(this).attr("data-state", "animate");
+               } else {
+                   $(this).attr("src", $(this).attr("data-still"));
+                   $(this).attr("data-state", "still");
+               }
+                
             });
 
-
-
-
-            
         }); 
+
     });
-
-    
-
-
 
 });
 
