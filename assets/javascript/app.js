@@ -20,6 +20,7 @@ $(document).ready(function() {
             gifButton = $(this).attr("data-name");
             console.log(gifButton)
             ajaxCall();
+            onClick();
         });   
     };
     
@@ -29,16 +30,37 @@ $(document).ready(function() {
         event.preventDefault();
         let car = $("#gif-search").val();
         carArray.push(car);
-            
         generateButtons();
-           
     });
     
     generateButtons()
     
     // Use "GET" method to access Giphy API.
-        
-    
+    function onClick () {
+        $("img.giphy").on("click", function() {
+            console.log("clicked a giphy");
+            //console.log(state);
+            console.log($(this).attr("src"));
+            let state= $(this).attr("data-state");
+             
+            if (state == "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+                $(this).css({
+                    "box-shadow":" 0 5px 8px 0 blue",
+                    border: "solid 3px blue"
+                });
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+                $(this).css({
+                    "box-shadow":"none",
+                    border: "inset 4px"
+                });
+            }; 
+        });   
+    };
+
     function ajaxCall() {
         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifButton + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
     
@@ -68,31 +90,8 @@ $(document).ready(function() {
                 $("#giphy-div").prepend(imgDiv);
                     
             };
-    
-            $("img.giphy").on("click", function() {
-                console.log("clicked a giphy");
-                //console.log(state);
-                console.log($(this).attr("src"));
-                let state= $(this).attr("data-state");
-                     
-                if (state == "still") {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                    $(this).css({
-                        "box-shadow":" 0 5px 8px 0 blue"
-                    });
-                } else {
-                    $(this).attr("src", $(this).attr("data-still"));
-                    $(this).attr("data-state", "still");
-                    $(this).css({
-                        "box-shadow":"none"
-                    });
-                }
-                     
-                });
-             
+            onClick();
         }); 
     };
-            
 });
     

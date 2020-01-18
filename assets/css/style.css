@@ -25,8 +25,8 @@ h1 {
     text-align: center;
 }
 
-form {
-  align-items: center;
+#form-div {
+  margin: auto;
 }
 
 #giphy-div {
@@ -39,7 +39,7 @@ form {
 }
 
 img {
-    border: inset 2px;
+    border: inset 4px;
 }
 
 img:hover {
@@ -48,7 +48,8 @@ img:hover {
     transition: transform 150ms;
 }
 
-img:checked {
-    box-shadow: 0 5px 8px 0 darkred;
+#main-div {
+    clear: left;
 }
+
 
