@@ -1,6 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+
 button,
 div,
 form,
 input {
   margin: 10px;
 }
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: transform 150ms;
+}
+
+#add-gif {
+    cursor: pointer;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+  align-items: center;
+}
+
+#giphy-div {
+    display: inline;
+}
+
+.gif-container {
+    width: 48%;
+    float: left;
+}
+
+img {
+    border: inset 2px;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: transform 150ms;
+}
+
+img:checked {
+    box-shadow: 0 5px 8px 0 darkred;
+}
+

@@ -1,51 +1,54 @@
-// Define global variables and themed Array.
-let carArray = ["ae86", "silvia", "supra", "rx7", "180sx"];
-let gifButton;// = $('#gif-search').val();
-//let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
-
-
-$(document).ready(() => {
-// Create Buttons for each item in Array and input to DOM.
+$(document).ready(function() {
+    
+    
+    let carArray = ["ae86", "silvia", "supra", "rx7", "180sx"];
+    let gifButton;
+    
     function generateButtons() {
-
+    
         $("#button-div").empty();
-        
-        for (var i = 0; i < carArray.length; i++) {
             
+        for (var i = 0; i < carArray.length; i++) {
             let btn = $("<button>");
             btn.addClass("gif-button");
             btn.attr("data-name", carArray[i]);
             btn.text(carArray[i]);
             $("#button-div").append(btn);
         };
+    
+        $("button.gif-button").on("click", function() {
+            gifButton = $(this).attr("data-name");
+            console.log(gifButton)
+            ajaxCall();
+        });   
     };
-
-
+    
+    
     // Grab user input and onClick to add input to Array.
     $("#add-gif").on("click", function(event) {
         event.preventDefault();
         let car = $("#gif-search").val();
         carArray.push(car);
-        
-        generateButtons()
-        
+            
+        generateButtons();
+           
     });
-
+    
     generateButtons()
-
+    
     // Use "GET" method to access Giphy API.
-    $(".gif-button").on("click", function() {
-        gifButton = $(this).attr("data-name");
-        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifButton + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
         
-
+    
+    function ajaxCall() {
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifButton + "&limit=10&rating=g&api_key=iteCBHWxKTj06159RB4MDy59EObpbeRg";
+    
         $.ajax({
         url: queryURL,
         method: "GET"
         }).then(function(response) {
             console.log(response);
             let results = response.data;
-            
+                
             for ( var j = 0; j < results.length; j++) {
                 let imgDiv = $("<div>");
                 imgDiv.addClass("gif-container");
@@ -63,29 +66,33 @@ $(document).ready(() => {
                 imgDiv.prepend(paragraph);
                 imgDiv.prepend(gifImg);
                 $("#giphy-div").prepend(imgDiv);
-                
+                    
             };
-
+    
             $("img.giphy").on("click", function() {
                 console.log("clicked a giphy");
+                //console.log(state);
                 console.log($(this).attr("src"));
                 let state= $(this).attr("data-state");
-                console.log(state);
-                
-               if (state == "still") {
-                   $(this).attr("src", $(this).attr("data-animate"));
-                   $(this).attr("data-state", "animate");
-               } else {
-                   $(this).attr("src", $(this).attr("data-still"));
-                   $(this).attr("data-state", "still");
-               }
-                
-            });
-
+                     
+                if (state == "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                    $(this).css({
+                        "box-shadow":" 0 5px 8px 0 blue"
+                    });
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                    $(this).css({
+                        "box-shadow":"none"
+                    });
+                }
+                     
+                });
+             
         }); 
-
-    });
-
+    };
+            
 });
-
-// Input loaded Giphy images to -'giphy-div' with DOM manipulation.
+    
