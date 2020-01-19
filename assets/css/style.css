@@ -5,9 +5,14 @@
         box-sizing: border-box;
     }
     
+    body {
+        background-color: #cccccc;
+    }
+    
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
+        font-size: 72px;;
     }
 
     h4 {
@@ -27,12 +32,12 @@
       margin: 10px;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height: 400px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -52,6 +57,15 @@
       margin: auto;
     }
     
+    #logo1 {
+        position: relative;
+        float: left;
+    }
+
+    #logo2 {
+        
+        float: right;
+    }
 }
 
 @media only screen and (max-width: 2000px) {
@@ -59,9 +73,14 @@
         box-sizing: border-box;
     }
     
+    body {
+        background-color: #cccccc;
+    }
+
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
+        font-size: 52px;
     }
 
     h4 {
@@ -81,12 +100,12 @@
       margin: 10px;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height: 300px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -114,10 +133,15 @@
     * {
         box-sizing: border-box;
     }
+
+    body {
+        background-color: #cccccc;
+    }
     
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
+        font-size: 45px;
     }
 
     h4 {
@@ -137,12 +161,12 @@
       margin: 10px;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height: 300px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -170,10 +194,15 @@
     * {
         box-sizing: border-box;
     }
+
+    body {
+        background-color: #cccccc;
+    }
     
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
+        font-size: 38px;
     }
 
     h4 {
@@ -199,12 +228,12 @@
         transition: transform 150ms;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height:300px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -232,6 +261,10 @@
         box-sizing: border-box;
     }
     
+    body {
+        background-color: #cccccc;
+    }
+
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
@@ -254,12 +287,12 @@
         margin: 10px;
     }
 
-    img {
+    img.giphy {
         border: inset 4px;
         height:200px;
     }
 
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -296,14 +329,31 @@
       margin: auto;
     }
     
+    #logo1 {
+        position: relative;
+        float: left;
+        width: 20%;
+        height:5%
+    }
+
+    #logo2 {
+        width: 20%;
+        height: 5%;
+        float: right;
+    }
+
 }
 
-@media only screen and (max-width: 640px) {//
+@media only screen and (max-width: 640px) {
 
     * {
         box-sizing: border-box;
     }
     
+    body {
+        background-color: #cccccc;
+    }
+
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
@@ -332,12 +382,12 @@
         transition: transform 150ms;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height:200px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
@@ -365,6 +415,10 @@
         box-sizing: border-box;
     }
     
+    body {
+        background-color: #cccccc;
+    }
+
     h1 {
         text-align: center;
         font-family:'Atomic Age', cursive;
@@ -393,12 +447,12 @@
         transition: transform 150ms;
     }
     
-    img {
+    img.giphy {
         border: inset 4px;
         height:200px;
     }
     
-    img:hover {
+    img.giphy:hover {
         cursor: pointer;
         transform: translateY(-2px);
         transition: transform 150ms;
