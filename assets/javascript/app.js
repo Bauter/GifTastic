@@ -48,14 +48,14 @@ $(document).ready(function() {
                 $(this).attr("data-state", "animate");
                 $(this).css({
                     "box-shadow":" 0 5px 8px 0 blue",
-                    border: "solid 3px blue"
+                   //border: "solid .5px blue"     //when applied, causes right most image in row on click to shift lower left image over to lower right img position. ONLY IF left most image in same row is not already clicked, then no shifting of lower image occurs....how strange
                 });
             } else {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
                 $(this).css({
-                    "box-shadow":"none",
-                    border: "inset 4px"
+                   "box-shadow":"none",
+                   //border: "inset 4px"
                 });
             }; 
         });   
@@ -85,6 +85,10 @@ $(document).ready(function() {
                     src: results[j].images.fixed_height_still.url
                 });
                 gifImg.addClass("giphy");
+                gifImg.css({width:"95%",
+                            padding: "3px",
+                            margin:"10px"
+                });
                 imgDiv.prepend(paragraph);
                 imgDiv.prepend(gifImg);
                 $("#giphy-div").prepend(imgDiv);
