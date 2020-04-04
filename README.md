@@ -10,7 +10,9 @@ This repo was created to design a webpage with dynamic images and to practice us
 
 -Each active gif can be identified by the glowing blue shadow displayed on click. 
 
+### Link to Live-pages
 
+https://bauter.github.io/GifTastic/
 
 ## How was this project created?
 
