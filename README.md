@@ -14,6 +14,8 @@ This repo was created to design a webpage with dynamic images and to practice us
 
 https://bauter.github.io/GifTastic/
 
+![giftastic-app](giftastic.gif)
+
 ## How was this project created?
 
 -Coding was done using Visual Studio Code ("https://code.visualstudio.com/") a text editor can be downloaded from their website.
